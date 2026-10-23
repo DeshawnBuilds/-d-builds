@@ -55,6 +55,7 @@ export default function Newsletter({ headingLevel = "h2" }: Props) {
             {socialLinks.map((s) => (
               <li key={s.href}>
                 <a href={s.href} target="_blank" rel="me noopener" className="follow-link">
+                  {s.logo && <img src={s.logo} alt="" width={192} height={192} />}
                   <span>{s.label}</span>
                   <span aria-hidden="true">↗</span>
                 </a>

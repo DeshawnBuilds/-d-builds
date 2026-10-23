@@ -284,7 +284,11 @@ export const worlds: World[] = [
 ];
 
 // Social channels are added here once real URLs exist. Never invent them.
-export const socialLinks: NavItem[] = [];
+export type SocialLink = NavItem & { logo?: string };
+
+export const socialLinks: SocialLink[] = [
+  { label: "X · Articles", href: "https://x.com/DeshawnBuilds", logo: "/worlds/x.jpg" },
+];
 
 export const acuSections = [
   {

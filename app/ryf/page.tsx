@@ -38,6 +38,11 @@ export default function RYFPage() {
               <span className="dot" aria-hidden="true" /> YouTube channel coming soon
             </p>
           )}
+          <p className="ryf-hero__x">
+            <a href="https://x.com/DeshawnBuilds" target="_blank" rel="me noopener">
+              Read the articles on X <span aria-hidden="true">↗</span>
+            </a>
+          </p>
         </div>
       </PageHero>
 

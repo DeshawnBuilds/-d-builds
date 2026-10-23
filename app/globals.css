@@ -2581,6 +2581,10 @@ main:focus {
   color: var(--ink-2);
 }
 
+.ryf-hero__x {
+  margin-top: 16px;
+}
+
 .ryf-about__copy {
   display: grid;
   gap: 16px;
@@ -2600,12 +2604,14 @@ main:focus {
   color: var(--stone);
 }
 
-.ryf-more a {
+.ryf-more a,
+.ryf-hero__x a {
   color: var(--ink);
   border-bottom: 1px solid var(--line-2);
 }
 
-.ryf-more a:hover {
+.ryf-more a:hover,
+.ryf-hero__x a:hover {
   color: var(--acid);
 }
 
