@@ -7,19 +7,19 @@ export default function ThreeBuilds() {
     <section id="the-builds" className="section builds" aria-labelledby="builds-title">
       <div className="container">
         <SectionHead
-          label="The Three Builds"
+          label="The Build Log"
           id="builds-title"
           title={
             <>
-              One life.
+              Underneath
               <br />
-              <span className="dim">Three constructions.</span>
+              <span className="dim">it all.</span>
             </>
           }
           aside={
             <p>
-              The person, the creations and the future are being built at the same
-              time. Each one makes the others possible.
+              The worlds are what I make. This is the life behind them: the person,
+              the work and the future, all being built at the same time.
             </p>
           }
         />

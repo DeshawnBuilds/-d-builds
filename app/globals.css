@@ -2698,3 +2698,33 @@ main:focus {
     margin: 0;
   }
 }
+
+/* Published article body */
+.article__body {
+  display: grid;
+  gap: 1.25em;
+  max-width: 40em;
+  margin-top: 40px;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--ink-2);
+}
+
+.article__body h2 {
+  margin: 1em 0 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.article__body p {
+  margin: 0;
+}
+
+.article__date {
+  color: var(--stone);
+}
+
+.article__original a {
+  color: var(--acid);
+}

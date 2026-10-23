@@ -19,11 +19,16 @@ export type NavItem = { label: string; href: string };
 
 export const primaryNav: NavItem[] = [
   { label: "RYF", href: "/ryf" },
-  { label: "Myself", href: "/myself" },
-  { label: "Things", href: "/things" },
-  { label: "Future", href: "/future" },
+  { label: "Films", href: "/things/awakened-creators" },
   { label: "Writing", href: "/writing" },
   { label: "About", href: "/about" },
+];
+
+// The build log: the life underneath the worlds.
+export const buildNav: NavItem[] = [
+  { label: "Building Myself", href: "/myself" },
+  { label: "Building Things", href: "/things" },
+  { label: "Building My Future", href: "/future" },
 ];
 
 export const followNav: NavItem = { label: "Follow the Build", href: "/follow" };
@@ -192,6 +197,11 @@ export type Article = {
   title: string;
   excerpt: string;
   featured?: boolean;
+  // Published text, one string per paragraph. Lines starting with "## " become headings.
+  body?: string[];
+  date?: string;
+  // Where it was first posted, e.g. the X article.
+  originalUrl?: string;
 };
 
 // Article pages render from this list. Bodies are added when essays exist.
