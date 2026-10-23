@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { followNav, primaryNav, site, socialLinks, worlds } from "@/data/site";
+import { buildNav, followNav, primaryNav, site, socialLinks, worlds } from "@/data/site";
 
 export default function Footer() {
   return (
@@ -22,7 +22,7 @@ export default function Footer() {
           <nav aria-label="Footer">
             <p className="meta footer__heading">Index</p>
             <ul className="footer__list">
-              {[{ label: "Home", href: "/" }, ...primaryNav, followNav].map((item) => (
+              {[{ label: "Home", href: "/" }, ...primaryNav, ...buildNav, followNav].map((item) => (
                 <li key={item.href}>
                   <Link href={item.href}>{item.label}</Link>
                 </li>

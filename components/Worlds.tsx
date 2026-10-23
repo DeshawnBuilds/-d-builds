@@ -22,10 +22,19 @@ export default function Worlds({ headingLevel = "h2", compact = false }: Props) 
           }
           aside={
             compact ? undefined : (
-              <p>
-                I talk about it, I make films about it, and I capture the feeling of it.
-                Same story every time: moving from survival into creation.
-              </p>
+              <>
+                <img
+                  className="worlds__portrait"
+                  src="/deshawn.webp"
+                  alt="Deshawn, backlit in warm gold light"
+                  width={1000}
+                  height={1333}
+                />
+                <p>
+                  I&rsquo;m Deshawn. I talk about it, I make films about it, and I capture the
+                  feeling of it. Same story every time: moving from survival into creation.
+                </p>
+              </>
             )
           }
         />

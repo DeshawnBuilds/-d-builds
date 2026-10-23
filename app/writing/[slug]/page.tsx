@@ -35,15 +35,35 @@ export default async function ArticlePage({ params }: Props) {
           </p>
           <h1 className="article__title">{article.title}</h1>
           <p className="article__excerpt">{article.excerpt}</p>
-          <div className="article__pending">
-            <p className="meta">
-              <span className="dot" aria-hidden="true" /> In development
-            </p>
-            <p>
-              This piece is still being written. It will be published here when it&rsquo;s
-              ready—follow the build to know when.
-            </p>
-          </div>
+          {article.body ? (
+            <div className="article__body">
+              {article.date && <p className="meta article__date">{article.date}</p>}
+              {article.body.map((para, i) =>
+                para.startsWith("## ") ? (
+                  <h2 key={i}>{para.slice(3)}</h2>
+                ) : (
+                  <p key={i}>{para}</p>
+                ),
+              )}
+              {article.originalUrl && (
+                <p className="meta article__original">
+                  <a href={article.originalUrl} target="_blank" rel="noopener">
+                    Also on X <span aria-hidden="true">↗</span>
+                  </a>
+                </p>
+              )}
+            </div>
+          ) : (
+            <div className="article__pending">
+              <p className="meta">
+                <span className="dot" aria-hidden="true" /> In development
+              </p>
+              <p>
+                This piece is still being written. It will be published here when it&rsquo;s
+                ready—follow the build to know when.
+              </p>
+            </div>
+          )}
         </div>
       </article>
       <Newsletter />

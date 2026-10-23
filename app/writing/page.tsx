@@ -26,12 +26,12 @@ export default function WritingPage() {
         <section className="section section--tight" aria-label="Featured">
           <div className="container">
             <Link href={`/writing/${featured.slug}`} className="feature-essay reveal">
-              <span className="feature-essay__clock meta" aria-hidden="true">48:00:00</span>
               <p className="meta">Featured / {pillarByKey(featured.pillar).title}</p>
               <h2 className="feature-essay__title">{featured.title}</h2>
               <p className="feature-essay__excerpt">{featured.excerpt}</p>
               <p className="meta feature-essay__status">
-                <span className="dot" aria-hidden="true" /> Essay in development
+                <span className="dot" aria-hidden="true" />{" "}
+                {featured.body ? (featured.date ? `Published ${featured.date}` : "Published") : "Essay in development"}
               </p>
             </Link>
           </div>

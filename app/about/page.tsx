@@ -17,6 +17,14 @@ export default function AboutPage() {
         label={`About / ${site.location}`}
         title={<>I&rsquo;m<br />Deshawn<span className="accent">.</span></>}
       >
+        <figure className="about-portrait">
+          <img
+            src="/deshawn.webp"
+            alt="Deshawn looking upward, backlit in warm gold light"
+            width={1000}
+            height={1333}
+          />
+        </figure>
         <p className="about-roles">
           {site.roles.map((r) => (
             <span key={r}>{r}.</span>
@@ -41,7 +49,7 @@ export default function AboutPage() {
 
       <section className="section" aria-labelledby="about-builds">
         <div className="container">
-          <SectionHead label="The Three Builds" id="about-builds" title="What’s being built." />
+          <SectionHead label="The Build Log" id="about-builds" title="What’s being built." />
           <ol className="about-builds">
             {pillars.map((p) => (
               <li key={p.key} className="about-build reveal">

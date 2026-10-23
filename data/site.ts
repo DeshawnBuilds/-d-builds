@@ -19,11 +19,16 @@ export type NavItem = { label: string; href: string };
 
 export const primaryNav: NavItem[] = [
   { label: "RYF", href: "/ryf" },
-  { label: "Myself", href: "/myself" },
-  { label: "Things", href: "/things" },
-  { label: "Future", href: "/future" },
+  { label: "Films", href: "/things/awakened-creators" },
   { label: "Writing", href: "/writing" },
   { label: "About", href: "/about" },
+];
+
+// The build log: the life underneath the worlds.
+export const buildNav: NavItem[] = [
+  { label: "Building Myself", href: "/myself" },
+  { label: "Building Things", href: "/things" },
+  { label: "Building My Future", href: "/future" },
 ];
 
 export const followNav: NavItem = { label: "Follow the Build", href: "/follow" };
@@ -117,6 +122,15 @@ export type LatestBuild = {
 
 export const latestBuilds: LatestBuild[] = [
   {
+    pillar: "things",
+    title: "The Message Is Simple. The Packaging Is the Art.",
+    description:
+      "Why ACU is the invitation, and RYF is the door for anyone who wants to go deeper.",
+    href: "/writing/the-message-is-simple",
+    art: "portal",
+    status: "New essay",
+  },
+  {
     pillar: "myself",
     title: "The 48HR Shot Clock",
     description:
@@ -124,15 +138,6 @@ export const latestBuilds: LatestBuild[] = [
     href: "/writing/the-48hr-shot-clock",
     art: "clock",
     status: "Essay in development",
-  },
-  {
-    pillar: "things",
-    title: "Awakened Creators",
-    description:
-      "Building impossible worlds as a language for remembering what we can become.",
-    href: "/things/awakened-creators",
-    art: "portal",
-    status: "Active universe",
   },
   {
     pillar: "future",
@@ -192,17 +197,160 @@ export type Article = {
   title: string;
   excerpt: string;
   featured?: boolean;
+  // Published text, one string per paragraph. Lines starting with "## " become headings.
+  body?: string[];
+  date?: string;
+  // Where it was first posted, e.g. the X article.
+  originalUrl?: string;
 };
 
 // Article pages render from this list. Bodies are added when essays exist.
 export const articles: Article[] = [
+  {
+    slug: "the-message-is-simple",
+    pillar: "things",
+    title: "The Message Is Simple. The Packaging Is the Art.",
+    excerpt:
+      "Most meaningful messages are surprisingly simple. The difficult part is getting someone to feel them.",
+    featured: true,
+    date: "October 2026",
+    originalUrl: "https://x.com/DeshawnBuilds/status/2100967235707908332",
+    body: [
+      "I had a thought this morning that helped me understand what I’m actually trying to build with ACU.",
+      "Most meaningful messages are surprisingly simple.",
+      "Fear can protect you until it becomes a prison.",
+      "You don’t have to believe every thought you have.",
+      "Waiting until you feel ready can become another way of never moving.",
+      "Who you become is shaped by what you repeatedly obey.",
+      "None of these ideas are particularly difficult to understand.",
+      "The difficult part is getting someone to feel them.",
+      "And I think that’s where art comes in.",
+      "## Nobody Asked for the Lesson",
+      "Think about the stories that stay with us.",
+      "Star Wars has things to say about fear, attachment, power, temptation, fathers and sons, and the choices that shape who we become.",
+      "Harry Potter can make us think about death, prejudice, friendship, courage, identity and the way we use power.",
+      "But that's not how most of us entered those worlds.",
+      "Nobody introduced Star Wars by saying:",
+      "Come experience a philosophical exploration of fear and attachment.",
+      "They gave us lightsabers.",
+      "The Force.",
+      "Darth Vader.",
+      "Space battles.",
+      "Nobody sold a child Harry Potter by promising a meditation on mortality and identity.",
+      "They said:",
+      "There's a school for wizards.",
+      "And we walked through the door.",
+      "Only later did we discover everything waiting for us inside.",
+      "That distinction has become increasingly important to me.",
+      "The message and the invitation are not the same thing.",
+      "## ACU Is the Invitation",
+      "I've spent a lot of time thinking about what I want ACU to say.",
+      "Maybe too much time.",
+      "Because I'm realizing that having something meaningful to say is only half of the responsibility.",
+      "The other half is making something people actually want to experience.",
+      "A lesson about fear is information.",
+      "But what if fear had a face?",
+      "What if it had a kingdom?",
+      "What if it built a gate?",
+      "What if it looked you in the eyes and said:",
+      "“This is as far as we go.”",
+      "Now we have a story.",
+      "And perhaps somewhere while watching that story, you recognize something.",
+      "You've heard that voice before.",
+      "Maybe not from a Warden standing in front of a frozen gate.",
+      "Maybe you've heard it inside yourself.",
+      "That's the kind of storytelling I'm interested in.",
+      "Not creating characters so I can explain psychology.",
+      "Creating characters compelling enough that you encounter the psychology yourself.",
+      "## Spectacle Isn't the Point",
+      "I've been thinking a lot about spectacle lately.",
+      "For a while, I worried about the tension between making something meaningful and making something entertaining.",
+      "I've started to believe that's the wrong way to frame it.",
+      "Spectacle doesn't have to replace meaning.",
+      "It can invite you toward it.",
+      "The impossible city.",
+      "The monster.",
+      "The chase.",
+      "The beautiful world you've never seen before.",
+      "The question you can't immediately answer.",
+      "Those things can make someone stop.",
+      "Story makes them stay.",
+      "Recognition makes them feel.",
+      "Meaning gives the experience somewhere to go.",
+      "So my job isn't simply to communicate the message.",
+      "My job is to dress the message in something worth opening.",
+      "## Entertainment Can Be a Trojan Horse for Transformation",
+      "I don't mean that manipulatively.",
+      "I mean that some truths are better experienced before they're explained.",
+      "You can tell someone:",
+      "Your mind sometimes mistakes familiarity for safety.",
+      "Or you can build a world where a man discovers that the guardian protecting him from uncertainty has quietly become his jailer.",
+      "Same idea.",
+      "Different experience.",
+      "And experience has a strange way of getting past defenses that instruction can't.",
+      "That's what I want ACU to become.",
+      "A universe you can enjoy without ever studying the philosophy underneath it.",
+      "Characters you want to follow.",
+      "Kingdoms you want to explore.",
+      "Conflicts you want resolved.",
+      "Images you remember.",
+      "But underneath all of it, something else is happening.",
+      "Every kingdom represents something human.",
+      "Every antagonist believes something.",
+      "Every conflict asks a question.",
+      "And every story leaves behind a mirror.",
+      "You came for the world.",
+      "Somewhere along the way, you saw yourself.",
+      "## And Then Comes RYF",
+      "This is where I'm beginning to understand the relationship between ACU and Remember Your Future.",
+      "ACU isn't the instruction manual.",
+      "ACU is the experience that makes you want to ask the question.",
+      "Maybe you meet the Warden and recognize your fear.",
+      "Maybe you enter the Lull and recognize your procrastination.",
+      "Maybe you encounter the Archivist and realize how many thoughts you've mistaken for truth.",
+      "ACU can show you the pattern.",
+      "RYF can eventually help you work with it.",
+      "That creates a progression I've been thinking about:",
+      "Spectacle → Story → Identification → Insight → Transformation.",
+      "Not every viewer needs to travel the entire path.",
+      "That's important.",
+      "Somebody should be able to watch ACU simply because they love the worlds.",
+      "Someone else may find something inside those worlds that changes the way they understand themselves.",
+      "Both experiences are valid.",
+      "But for the person who wants to go deeper, there should eventually be another door.",
+      "That's where I see RYF.",
+      "## So What Am I Building?",
+      "I'm still discovering the answer.",
+      "But today I understand it more clearly than I did yesterday.",
+      "I'm not trying to build motivational content with prettier visuals.",
+      "I'm trying to build entertainment with something living underneath it.",
+      "A mythology built from the invisible things human beings wrestle with.",
+      "Fear.",
+      "Doubt.",
+      "Avoidance.",
+      "Identity.",
+      "Hope.",
+      "Potential.",
+      "The stories we tell ourselves about what is possible.",
+      "And instead of explaining those things from a chair in front of a camera, I want to turn them into kingdoms.",
+      "Characters.",
+      "Civilizations.",
+      "Conflicts.",
+      "Spectacle.",
+      "Stories.",
+      "Because maybe the message was never the difficult part.",
+      "The message is simple.",
+      "The craft is creating something beautiful enough, strange enough, exciting enough, and human enough that someone chooses to open it.",
+      "And when they do—",
+      "make sure there's something worth finding inside.",
+    ],
+  },
   {
     slug: "the-48hr-shot-clock",
     pillar: "myself",
     title: "The 48HR Shot Clock",
     excerpt:
       "There are things I want to create before I die. The clock is already moving.",
-    featured: true,
   },
   {
     slug: "awakened-creators-field-notes",
@@ -288,6 +436,23 @@ export type SocialLink = NavItem & { logo?: string };
 
 export const socialLinks: SocialLink[] = [
   { label: "X · Articles", href: "https://x.com/DeshawnBuilds", logo: "/worlds/x.jpg" },
+];
+
+// ACU films shown on the ACU page. `youtubeId` is the part after "watch?v=".
+export type Film = { title: string; youtubeId: string };
+export const films: Film[] = [
+  {
+    title: "The Most Dangerous Voice Says \u201cLater\u201d | The Still Kingdom \u2014 Episode 2",
+    youtubeId: "u7e4lXUpynA",
+  },
+  {
+    title: "Why Do We Always Start Strong Then Lose Momentum | The Archivist | Episode 1",
+    youtubeId: "wTSlkZWs-44",
+  },
+  {
+    title: "Soul Obedience | Awakened Creator Ep 5: The Flame Era Begins",
+    youtubeId: "bHGAqqRZAEE",
+  },
 ];
 
 export const acuSections = [

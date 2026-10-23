@@ -16,7 +16,7 @@ export default function ArticleList({ items }: { items: Article[] }) {
               <span className="article-row__title">{a.title}</span>
               <span className="article-row__excerpt">{a.excerpt}</span>
             </span>
-            <span className="meta article-row__status">In development</span>
+            <span className="meta article-row__status">{a.body ? "Read" : "In development"}</span>
           </Link>
         </li>
       ))}
