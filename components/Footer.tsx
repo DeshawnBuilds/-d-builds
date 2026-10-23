@@ -56,11 +56,16 @@ export default function Footer() {
               ))}
             </ul>
             {socialLinks.length > 0 && (
-              <ul className="footer__list">
+              <ul className="footer__worlds">
                 {socialLinks.map((s) => (
                   <li key={s.href}>
-                    <a href={s.href} rel="me noopener" target="_blank">
-                      {s.label} <span aria-hidden="true">↗</span>
+                    <a href={s.href} rel="me noopener" target="_blank" className="footer__world">
+                      {s.logo && (
+                        <img src={s.logo} alt="" width={192} height={192} loading="lazy" />
+                      )}
+                      <span>
+                        {s.label} <span aria-hidden="true">↗</span>
+                      </span>
                     </a>
                   </li>
                 ))}
