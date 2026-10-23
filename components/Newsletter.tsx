@@ -1,12 +1,13 @@
-"use client";
-
-import { useId, useState } from "react";
+import Link from "next/link";
+import { useId } from "react";
+import { socialLinks, worlds } from "@/data/site";
 
 type Props = { headingLevel?: "h1" | "h2" };
 
-// UI only for V1. Nothing is sent or stored until the newsletter is connected.
+// No email list is connected yet, so this section points to the worlds
+// instead of showing a form that stores nothing. Add the form back once a
+// newsletter service is wired up.
 export default function Newsletter({ headingLevel = "h2" }: Props) {
-  const [submitted, setSubmitted] = useState(false);
   const id = useId();
   const Heading = headingLevel;
 
@@ -16,7 +17,7 @@ export default function Newsletter({ headingLevel = "h2" }: Props) {
         <div className="reveal">
           <p className="meta newsletter__label">
             <span className="section-head__rule" aria-hidden="true" />
-            Weekly dispatch
+            Follow along
           </p>
           <Heading id={`${id}-title`} className="newsletter__title">
             Follow
@@ -27,50 +28,40 @@ export default function Newsletter({ headingLevel = "h2" }: Props) {
 
         <div className="newsletter__form-wrap reveal">
           <p className="newsletter__copy">
-            Once a week: what I built, what I learned, what failed, and what changed.
+            Pick the way in that fits you: listen, watch the films, or just catch the feeling.
           </p>
-
-          {submitted ? (
-            <div className="newsletter__done" role="status">
-              <p className="meta">
-                <span className="dot" aria-hidden="true" /> Noted
-              </p>
-              <p>
-                The newsletter connection is coming next. Nothing was sent or stored
-                yet—check back soon to join for real.
-              </p>
-              <button type="button" className="link-btn" onClick={() => setSubmitted(false)}>
-                Back
-              </button>
-            </div>
-          ) : (
-            <form
-              className="newsletter__form"
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-              }}
-            >
-              <label htmlFor={`${id}-email`} className="sr-only">
-                Email address
-              </label>
-              <input
-                id={`${id}-email`}
-                type="email"
-                name="email"
-                required
-                autoComplete="email"
-                inputMode="email"
-                placeholder="your@email.com"
-                className="newsletter__input"
-              />
-              <button type="submit" className="btn btn--solid">
-                Join D BUILDS <span aria-hidden="true">→</span>
-              </button>
-            </form>
-          )}
-
-          <p className="meta newsletter__small">No noise. Just the build.</p>
+          <ul className="follow-links">
+            {worlds.map((w) => (
+              <li key={w.key}>
+                {w.url ? (
+                  <a href={w.url} target="_blank" rel="me noopener" className="follow-link">
+                    <img src={w.logo} alt="" width={1200} height={1200} />
+                    <span>
+                      {w.short} <span className="dim">· {w.where}</span>
+                    </span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                ) : (
+                  <Link href={w.href ?? "/"} className="follow-link">
+                    <img src={w.logo} alt="" width={1200} height={1200} />
+                    <span>
+                      {w.short} <span className="dim">· {w.where}</span>
+                    </span>
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                )}
+              </li>
+            ))}
+            {socialLinks.map((s) => (
+              <li key={s.href}>
+                <a href={s.href} target="_blank" rel="me noopener" className="follow-link">
+                  <span>{s.label}</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="meta newsletter__small">Email updates are coming. No noise. Just the build.</p>
         </div>
       </div>
     </section>
