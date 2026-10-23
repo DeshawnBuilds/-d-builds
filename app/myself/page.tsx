@@ -43,7 +43,6 @@ export default function MyselfPage() {
           <div className="container">
             <SectionHead label="Featured Essay" />
             <Link href={`/writing/${featured.slug}`} className="feature-essay reveal">
-              <span className="feature-essay__clock meta" aria-hidden="true">48:00:00</span>
               <h2 id="featured-essay" className="feature-essay__title">{featured.title}</h2>
               <p className="feature-essay__excerpt">{featured.excerpt}</p>
               <p className="meta feature-essay__status">

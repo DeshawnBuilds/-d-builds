@@ -4,7 +4,7 @@ import PageHero from "@/components/PageHero";
 import SectionHead from "@/components/SectionHead";
 import WritingArchive from "@/components/WritingArchive";
 import Newsletter from "@/components/Newsletter";
-import { articles, pillarByKey } from "@/data/site";
+import { articles, pillarByKey, xUrl } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Writing",
@@ -42,6 +42,12 @@ export default function WritingPage() {
         <div className="container">
           <SectionHead label="Index" id="all-writing" title="The archive." />
           <WritingArchive />
+          <p className="more-on-x">
+            More essays and field notes live on X.{" "}
+            <a href={xUrl} target="_blank" rel="me noopener">
+              Read them there <span aria-hidden="true">↗</span>
+            </a>
+          </p>
         </div>
       </section>
 

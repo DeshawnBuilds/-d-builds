@@ -109,7 +109,7 @@ export const pillars: Pillar[] = [
 export const pillarByKey = (key: PillarKey) =>
   pillars.find((p) => p.key === key)!;
 
-export type Art = "clock" | "portal" | "network";
+export type Art = "portal" | "network";
 
 export type LatestBuild = {
   pillar: PillarKey;
@@ -129,15 +129,6 @@ export const latestBuilds: LatestBuild[] = [
     href: "/writing/the-message-is-simple",
     art: "portal",
     status: "New essay",
-  },
-  {
-    pillar: "myself",
-    title: "The 48HR Shot Clock",
-    description:
-      "There are things I want to create before I die. The clock is already moving.",
-    href: "/writing/the-48hr-shot-clock",
-    art: "clock",
-    status: "Essay in development",
   },
   {
     pillar: "future",
@@ -346,13 +337,6 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: "the-48hr-shot-clock",
-    pillar: "myself",
-    title: "The 48HR Shot Clock",
-    excerpt:
-      "There are things I want to create before I die. The clock is already moving.",
-  },
-  {
     slug: "awakened-creators-field-notes",
     pillar: "things",
     title: "Awakened Creators: Field Notes",
@@ -431,11 +415,14 @@ export const worlds: World[] = [
   },
 ];
 
+// Where the rest of the essays live.
+export const xUrl = "https://x.com/DeshawnBuilds";
+
 // Social channels are added here once real URLs exist. Never invent them.
 export type SocialLink = NavItem & { logo?: string };
 
 export const socialLinks: SocialLink[] = [
-  { label: "X · Articles", href: "https://x.com/DeshawnBuilds", logo: "/worlds/x.jpg" },
+  { label: "X · Articles", href: xUrl, logo: "/worlds/x.jpg" },
 ];
 
 // ACU films shown on the ACU page. `youtubeId` is the part after "watch?v=".
