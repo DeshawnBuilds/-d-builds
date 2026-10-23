@@ -1,16 +1,16 @@
 import Hero from "@/components/Hero";
-import ThreeBuilds from "@/components/ThreeBuilds";
+import Worlds from "@/components/Worlds";
 import LatestBuilds from "@/components/LatestBuilds";
-import ACUPortal from "@/components/ACUPortal";
+import ThreeBuilds from "@/components/ThreeBuilds";
 import Newsletter from "@/components/Newsletter";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <ThreeBuilds />
+      <Worlds />
       <LatestBuilds />
-      <ACUPortal />
+      <ThreeBuilds />
       <Newsletter />
     </>
   );

@@ -41,7 +41,7 @@ export default function Hero() {
         </dl>
       </div>
 
-      <a href="#the-builds" className="hero__cue meta">
+      <a href="#worlds" className="hero__cue meta">
         Scroll to enter the build <span aria-hidden="true">↓</span>
       </a>
     </section>

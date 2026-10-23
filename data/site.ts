@@ -18,6 +18,7 @@ export const site = {
 export type NavItem = { label: string; href: string };
 
 export const primaryNav: NavItem[] = [
+  { label: "RYF", href: "/ryf" },
   { label: "Myself", href: "/myself" },
   { label: "Things", href: "/things" },
   { label: "Future", href: "/future" },
@@ -175,9 +176,11 @@ export const projects: Project[] = [
   },
   {
     title: "Remember Your Future",
-    category: "Framework",
-    status: "Developing",
-    description: "A personal framework still being written. It will be shared as it takes shape.",
+    category: "Podcast",
+    status: "Building",
+    description:
+      "Honest episodes, built from my journal, about loving who you are while you become who you're going to be.",
+    href: "/ryf",
   },
 ];
 
@@ -213,6 +216,70 @@ export const articles: Article[] = [
     pillar: "future",
     title: "Learning Networking From Zero",
     excerpt: "Documenting the climb from fundamentals toward engineering.",
+  },
+];
+
+// The three worlds. Same person, same brand, three ways in.
+// `url` is the outside channel; add it only once a real URL exists.
+export type World = {
+  key: "ryf" | "acu" | "wcw";
+  name: string;
+  short: string;
+  where: string;
+  logo: string;
+  logoAlt: string;
+  line: string;
+  description: string;
+  // Page on this site, if the world has one.
+  href?: string;
+  cta?: string;
+  // Outside channel. Leave url empty until a real one exists.
+  url?: string;
+  urlLabel: string;
+};
+
+export const worlds: World[] = [
+  {
+    key: "ryf",
+    name: "Remember Your Future",
+    short: "RYF",
+    where: "Podcast · YouTube",
+    logo: "/worlds/ryf.svg",
+    logoAlt: "RYF — Remember Your Future logo: a gold triangle inside an open spiral",
+    line: "For anyone who can see the life they want but keeps getting pulled back.",
+    description:
+      "Me, talking honestly about recovery, change and learning to love the person who is still becoming.",
+    href: "/ryf",
+    cta: "About the podcast",
+    urlLabel: "YouTube channel",
+  },
+  {
+    key: "acu",
+    name: "Awakened Creators Universe",
+    short: "ACU",
+    where: "Films · YouTube",
+    logo: "/worlds/acu.svg",
+    logoAlt: "ACU — Awakened Creators Universe logo: a gold outline triangle above the letters ACU",
+    line: "Cinematic worlds about remembering what we can become.",
+    description:
+      "The Still Kingdom, The Dream Series and the mythology behind them, made with AI and built to last.",
+    href: "/things/awakened-creators",
+    cta: "Enter the universe",
+    url: "https://www.youtube.com/@ACU-STS",
+    urlLabel: "Watch on YouTube",
+  },
+  {
+    key: "wcw",
+    name: "The World Can Wait",
+    short: "The World Can Wait",
+    where: "Instagram",
+    logo: "/worlds/wcw.svg",
+    logoAlt: "The World Can Wait logo: a gold peak rising out of waves",
+    line: "Short films of calm in the middle of the noise.",
+    description:
+      "Quiet moments of people creating or resting while the world rushes past.",
+    url: "https://www.instagram.com/awakened_creator88/",
+    urlLabel: "Follow on Instagram",
   },
 ];
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { followNav, primaryNav, site, socialLinks } from "@/data/site";
+import { followNav, primaryNav, site, socialLinks, worlds } from "@/data/site";
 
 export default function Footer() {
   return (
@@ -31,8 +31,31 @@ export default function Footer() {
           </nav>
 
           <div>
-            <p className="meta footer__heading">Channels</p>
-            {socialLinks.length > 0 ? (
+            <p className="meta footer__heading">Three worlds, one person</p>
+            <ul className="footer__worlds">
+              {worlds.map((w) => (
+                <li key={w.key}>
+                  {w.url ? (
+                    <a href={w.url} target="_blank" rel="me noopener" className="footer__world">
+                      <img src={w.logo} alt="" width={1200} height={1200} loading="lazy" />
+                      <span>
+                        {w.short} <span aria-hidden="true">↗</span>
+                        <span className="footer__world-where">{w.where}</span>
+                      </span>
+                    </a>
+                  ) : (
+                    <Link href={w.href ?? "/"} className="footer__world">
+                      <img src={w.logo} alt="" width={1200} height={1200} loading="lazy" />
+                      <span>
+                        {w.short}
+                        <span className="footer__world-where">{w.where} · coming soon</span>
+                      </span>
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+            {socialLinks.length > 0 && (
               <ul className="footer__list">
                 {socialLinks.map((s) => (
                   <li key={s.href}>
@@ -42,8 +65,6 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            ) : (
-              <p className="footer__note">Being connected.</p>
             )}
           </div>
         </div>
