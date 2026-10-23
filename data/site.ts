@@ -300,6 +300,10 @@ export const socialLinks: SocialLink[] = [
   { label: "X · Articles", href: "https://x.com/DeshawnBuilds", logo: "/worlds/x.jpg" },
 ];
 
+// ACU films shown on the ACU page. `youtubeId` is the part after "watch?v=".
+export type Film = { title: string; youtubeId: string };
+export const films: Film[] = [];
+
 export const acuSections = [
   {
     title: "Latest Films",
