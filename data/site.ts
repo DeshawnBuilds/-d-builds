@@ -336,19 +336,6 @@ export const articles: Article[] = [
       "make sure there's something worth finding inside.",
     ],
   },
-  {
-    slug: "awakened-creators-field-notes",
-    pillar: "things",
-    title: "Awakened Creators: Field Notes",
-    excerpt:
-      "Building impossible worlds as a language for remembering what we can become.",
-  },
-  {
-    slug: "learning-networking-from-zero",
-    pillar: "future",
-    title: "Learning Networking From Zero",
-    excerpt: "Documenting the climb from fundamentals toward engineering.",
-  },
 ];
 
 // The three worlds. Same person, same brand, three ways in.
