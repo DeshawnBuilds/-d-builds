@@ -46,13 +46,21 @@ Almost everything lives in `data/site.ts`.
   `components/PortalVisual.tsx` are abstract CSS stand-ins, to be swapped for
   real, optimized assets.
 
+## Free guide signup
+
+`/free-guide` and the Follow the Build section use `components/SignupForm.tsx`.
+It posts to `/api/subscribe` (`app/api/subscribe/route.ts`), which validates
+the email and forwards it server-side to Kit as `email_address`. Kit sends the
+confirmation email and delivers the guide; the PDF is not hosted on this site.
+
+- `KIT_FORM_ID` (optional): the Kit form to subscribe people to. Defaults to
+  `10089499`.
+
 ## Not yet connected
 
-- **Newsletter:** the form is UI only. Submitting shows a local
-  "connection coming next" message. Nothing is sent or stored.
 - **Placeholders:** sections marked "In development" are honest placeholders,
   not unfinished content passed off as finished.
 
 ## Deployment
 
-Deployed on Vercel from `main`. No configuration required.
+Deployed on Vercel from `main`. No environment variables are required.
