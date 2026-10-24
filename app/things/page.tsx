@@ -44,7 +44,7 @@ export default function ThingsPage() {
                     <span className="project__desc">{p.description}</span>
                   </span>
                   <span className="project__cat meta">{p.category}</span>
-                  <span className={`project__status meta status--${p.status.toLowerCase()}`}>
+                  <span className={`project__status meta status--${p.status.toLowerCase().replace(/ /g, "-")}`}>
                     <span className="dot" aria-hidden="true" /> {p.status}
                   </span>
                 </>

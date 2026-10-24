@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { site } from "@/data/site";
 
 export default function Hero() {
@@ -14,7 +15,13 @@ export default function Hero() {
 
       <div className="hero__meta-top meta">
         <p>
-          Deshawn <span className="dim">/</span> {site.roles.join(" · ")}
+          Deshawn <span className="dim">/</span>{" "}
+          {site.roles.map((r, i) => (
+            <Fragment key={r}>
+              {i > 0 && " · "}
+              <span className="nowrap">{r}</span>
+            </Fragment>
+          ))}
         </p>
         <p className="hero__log">
           <span className="rec" aria-hidden="true" /> Build Log / 001
