@@ -90,26 +90,16 @@ export const pillars: Pillar[] = [
     title: "Building My Future",
     short: "Future",
     tagline: "The direction.",
-    description:
-      "Learning the skills and building the career that takes me where I'm going.",
+    description: "Building a life where my time belongs to me.",
     href: "/future",
-    themes: [
-      "Learning technology",
-      "A+",
-      "Networking",
-      "Cloud",
-      "Engineering",
-      "Sales",
-      "Business-building",
-      "Learning from zero",
-    ],
+    themes: ["Freedom", "Ownership of time", "Sales", "Business-building"],
   },
 ];
 
 export const pillarByKey = (key: PillarKey) =>
   pillars.find((p) => p.key === key)!;
 
-export type Art = "clock" | "portal" | "network";
+export type Art = "clock" | "portal";
 
 export type LatestBuild = {
   pillar: PillarKey;
@@ -138,14 +128,6 @@ export const latestBuilds: LatestBuild[] = [
     href: "/writing/the-48hr-shot-clock",
     art: "clock",
     status: "New essay",
-  },
-  {
-    pillar: "future",
-    title: "Learning Networking From Zero",
-    description: "Documenting the climb from fundamentals toward engineering.",
-    href: "/future",
-    art: "network",
-    status: "Field notes in progress",
   },
 ];
 
@@ -189,7 +171,6 @@ export const projects: Project[] = [
   },
 ];
 
-export const learningPath = ["Tech+", "A+", "Networking", "Engineering"];
 
 export type Article = {
   slug: string;

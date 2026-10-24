@@ -1,67 +1,51 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionHead from "@/components/SectionHead";
-import Placeholder from "@/components/Placeholder";
 import Newsletter from "@/components/Newsletter";
-import { learningPath, pillarByKey } from "@/data/site";
+import { articles, pillarByKey } from "@/data/site";
+
+const pillar = pillarByKey("future");
 
 export const metadata: Metadata = {
   title: "Building My Future",
-  description: "Learning the skills and building the career that takes me where I'm going.",
+  description: pillar.description,
 };
 
 export default function FuturePage() {
-  const pillar = pillarByKey("future");
+  const essay = articles.find((a) => a.slug === "the-48hr-shot-clock");
 
   return (
     <>
       <PageHero
         variant="future"
         number={pillar.number}
-        label={`${pillar.tagline} Learning from zero.`}
+        label={pillar.tagline}
         title={<>Building<br />My Future.</>}
         lede={
           <p>
-            I&rsquo;m not documenting expertise.
+            I want freedom. Not because I hate work.
             <br />
-            <span className="ink">I&rsquo;m documenting the process of earning it.</span>
+            <span className="ink">Because I love life.</span>
           </p>
         }
       />
 
-      <section className="section" aria-labelledby="path-title">
-        <div className="container">
-          <SectionHead
-            label="The Route"
-            id="path-title"
-            title="The learning path."
-            aside={<p>No stage is marked complete until it&rsquo;s earned.</p>}
-          />
-          <ol className="path reveal" aria-label="Learning path">
-            {learningPath.map((step, i) => (
-              <li key={step} className="path__step">
-                <span className="meta path__num">Stage {String(i + 1).padStart(2, "0")}</span>
-                <span className="path__name">{step}</span>
-                {i < learningPath.length - 1 && (
-                  <span className="path__arrow" aria-hidden="true">→</span>
-                )}
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="learning-title">
-        <div className="container">
-          <SectionHead label="Starter Sections" id="learning-title" title="The work, in public." />
-          <div className="slots">
-            <Placeholder index={0} title="What I'm Learning" note="Current focus: networking fundamentals, from zero. Notes will be posted as they're made." />
-            <Placeholder index={1} title="Field Notes" note="Concepts, mistakes and the moments things finally click." />
-            <Placeholder index={2} title="Labs / Projects" note="Hands-on labs and technical projects, documented step by step." />
-            <Placeholder index={3} title="Career Build" note="The transition itself: what I'm aiming for and how I'm getting there." />
+      {essay && (
+        <section className="section" aria-labelledby="future-essay">
+          <div className="container">
+            <SectionHead label="Where it starts" />
+            <Link href={`/writing/${essay.slug}`} className="feature-essay reveal">
+              <span className="feature-essay__clock meta" aria-hidden="true">48:00:00</span>
+              <h2 id="future-essay" className="feature-essay__title">{essay.title}</h2>
+              <p className="feature-essay__excerpt">{essay.excerpt}</p>
+              <p className="meta feature-essay__status">
+                <span className="dot" aria-hidden="true" /> Read the essay
+              </p>
+            </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <Newsletter />
     </>
