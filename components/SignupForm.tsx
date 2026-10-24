@@ -3,7 +3,7 @@
 import { useId, useState } from "react";
 import { isValidEmail, normalizeEmail } from "@/lib/email";
 
-type Status = "idle" | "sending" | "success" | "error";
+type Status = "idle" | "sending" | "success" | "verify" | "error";
 
 type Props = { buttonLabel?: string };
 
@@ -13,6 +13,18 @@ export default function SignupForm({ buttonLabel = "Get the free guide" }: Props
   const id = useId();
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const [verifyUrl, setVerifyUrl] = useState("");
+
+  if (status === "verify") {
+    return (
+      <div className="signup__done" role="status">
+        <p>One last step. Confirm you&rsquo;re a real person and your guide is on the way.</p>
+        <a href={verifyUrl} target="_blank" rel="noopener" className="btn btn--solid">
+          Finish signing up <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    );
+  }
 
   if (status === "success") {
     return (
@@ -39,7 +51,15 @@ export default function SignupForm({ buttonLabel = "Get the free guide" }: Props
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
-      if (!res.ok) throw new Error(String(res.status));
+      const data = (await res.json().catch(() => null)) as
+        | { ok?: boolean; status?: string; verifyUrl?: string }
+        | null;
+      if (!res.ok || !data?.ok) throw new Error(String(res.status));
+      if (data.status === "verify" && data.verifyUrl) {
+        setVerifyUrl(data.verifyUrl);
+        setStatus("verify");
+        return;
+      }
       setStatus("success");
     } catch {
       setStatus("error");
