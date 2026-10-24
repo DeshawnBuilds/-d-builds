@@ -1061,59 +1061,6 @@ main:focus {
   color: var(--stone-2);
 }
 
-/* clock — the 48hr shot clock */
-.art--clock {
-  background:
-    radial-gradient(70% 60% at 50% 45%, rgba(237, 232, 223, 0.06), transparent 70%),
-    var(--bg-3);
-}
-
-.art-clock__dial {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 62%;
-  aspect-ratio: 1;
-  translate: -50% -55%;
-  border-radius: 50%;
-  background: repeating-conic-gradient(from 0deg, var(--line-2) 0deg 0.6deg, transparent 0.6deg 7.5deg);
-  -webkit-mask: radial-gradient(circle, transparent 60%, #000 61%, #000 70%, transparent 71%);
-  mask: radial-gradient(circle, transparent 60%, #000 61%, #000 70%, transparent 71%);
-}
-
-.art-clock__dial::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: conic-gradient(from 0deg, var(--acid) 0deg 70deg, transparent 70deg);
-  opacity: 0.85;
-}
-
-.art-clock__hand {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 1px;
-  height: 22%;
-  translate: -50% -100%;
-  margin-top: -3.4%;
-  background: var(--ink);
-  transform-origin: bottom center;
-  animation: spin 48s linear infinite;
-}
-
-.art-clock__time {
-  position: absolute;
-  left: 50%;
-  bottom: 13%;
-  translate: -50% 0;
-  font-family: var(--font-mono);
-  font-size: clamp(1rem, 2.4vw, 1.5rem);
-  letter-spacing: 0.2em;
-  color: var(--ink);
-}
-
 /* portal — small plate */
 .art--portal {
   background: radial-gradient(80% 70% at 50% 100%, var(--myth-soft), transparent 70%), var(--void);
@@ -1987,6 +1934,21 @@ main:focus {
   border-top: 1px solid var(--line);
 }
 
+.more-on-x {
+  margin-top: 28px;
+  color: var(--stone);
+}
+
+.more-on-x a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--line-2);
+  transition: color 0.2s var(--ease);
+}
+
+.more-on-x a:hover {
+  color: var(--acid);
+}
+
 /* filters */
 
 .filters {
@@ -2381,10 +2343,6 @@ main:focus {
 @keyframes nudge {
   0%, 70%, 100% { transform: none; }
   80% { transform: translateY(4px); }
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
 }
 
 @keyframes pulse {

@@ -1,9 +1,16 @@
 import Link from "next/link";
-import { pillarByKey, type Article } from "@/data/site";
+import { pillarByKey, xUrl, type Article } from "@/data/site";
 
 export default function ArticleList({ items }: { items: Article[] }) {
   if (items.length === 0) {
-    return <p className="empty meta">Nothing published in this build yet.</p>;
+    return (
+      <p className="empty more-on-x">
+        Nothing published here yet.{" "}
+        <a href={xUrl} target="_blank" rel="me noopener">
+          Read the essays on X <span aria-hidden="true">↗</span>
+        </a>
+      </p>
+    );
   }
   return (
     <ol className="articles">
