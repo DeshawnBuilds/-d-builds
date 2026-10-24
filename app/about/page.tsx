@@ -7,7 +7,7 @@ import { pillars, site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "I'm Deshawn. Creator. Builder. Student.",
+  description: "I'm Deshawn. Creator. Builder. Student of life.",
 };
 
 export default function AboutPage() {

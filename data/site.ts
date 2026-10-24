@@ -9,7 +9,7 @@ export const site = {
   title: "D BUILDS — Deshawn Builds",
   description: "Building myself. Building things. Building my future.",
   location: "Las Vegas, NV",
-  roles: ["Creator", "Builder", "Student"],
+  roles: ["Creator", "Builder", "Student of life"],
   headline: ["I'M BUILDING A LIFE", "I ONCE THOUGHT", "I WAS LATE FOR."],
   supporting:
     "I'm documenting what happens when you stop waiting to become the person you imagine—and start building him.",
@@ -90,26 +90,16 @@ export const pillars: Pillar[] = [
     title: "Building My Future",
     short: "Future",
     tagline: "The direction.",
-    description:
-      "Learning the skills and building the career that takes me where I'm going.",
+    description: "Building a life where my time belongs to me.",
     href: "/future",
-    themes: [
-      "Learning technology",
-      "A+",
-      "Networking",
-      "Cloud",
-      "Engineering",
-      "Sales",
-      "Business-building",
-      "Learning from zero",
-    ],
+    themes: ["Freedom", "Ownership of time", "Sales", "Business-building"],
   },
 ];
 
 export const pillarByKey = (key: PillarKey) =>
   pillars.find((p) => p.key === key)!;
 
-export type Art = "clock" | "portal" | "network";
+export type Art = "clock" | "portal";
 
 export type LatestBuild = {
   pillar: PillarKey;
@@ -139,20 +129,12 @@ export const latestBuilds: LatestBuild[] = [
     art: "clock",
     status: "New essay",
   },
-  {
-    pillar: "future",
-    title: "Learning Networking From Zero",
-    description: "Documenting the climb from fundamentals toward engineering.",
-    href: "/future",
-    art: "network",
-    status: "Field notes in progress",
-  },
 ];
 
 export type Project = {
   title: string;
   category: string;
-  status: "Active" | "Building" | "Developing";
+  status: "Active" | "Building" | "Developing" | "In production";
   description: string;
   href?: string;
 };
@@ -169,8 +151,8 @@ export const projects: Project[] = [
   {
     title: "Mirror",
     category: "Software",
-    status: "Building",
-    description: "Software in progress. Details will be documented as it's built.",
+    status: "In production",
+    description: "Software in production. Details will be documented as it's built.",
   },
   {
     title: "AI Cinema Lab",
@@ -189,7 +171,6 @@ export const projects: Project[] = [
   },
 ];
 
-export const learningPath = ["Tech+", "A+", "Networking", "Engineering"];
 
 export type Article = {
   slug: string;

@@ -19,23 +19,6 @@ export default function BuildArt({ art }: { art: Art }) {
           <div className="art-portal__horizon" />
         </>
       )}
-      {art === "network" && (
-        <svg className="art-network" viewBox="0 0 200 140" preserveAspectRatio="xMidYMid slice">
-          <g className="art-network__lines">
-            <path d="M20 110 L60 80 L100 92 L140 50 L180 30" />
-            <path d="M60 80 L70 40 L140 50" />
-            <path d="M100 92 L130 120 L180 30" />
-          </g>
-          <g className="art-network__nodes">
-            {[
-              [20, 110], [60, 80], [70, 40], [100, 92], [130, 120], [140, 50],
-            ].map(([x, y]) => (
-              <circle key={`${x}-${y}`} cx={x} cy={y} r="2.4" />
-            ))}
-            <circle className="art-network__target" cx="180" cy="30" r="3.5" />
-          </g>
-        </svg>
-      )}
       <span className="art__plate meta">Plate / abstract</span>
     </div>
   );

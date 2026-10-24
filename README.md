@@ -30,7 +30,7 @@ app/                         routes
 components/                  Navigation, MobileMenu, Hero, BuildPillar,
                              LatestBuilds, ACUPortal, Newsletter, Footer, …
 data/site.ts                 all content: pillars, latest builds, projects,
-                             articles, learning path, social links
+                             articles, films, social links
 ```
 
 ## Editing content

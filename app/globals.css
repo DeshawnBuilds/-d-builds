@@ -154,6 +154,10 @@ main:focus {
   color: var(--ink);
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1153,40 +1157,6 @@ main:focus {
   background: linear-gradient(to right, transparent, rgba(233, 255, 208, 0.6), transparent);
 }
 
-/* network — learning from zero */
-.art--network {
-  background:
-    linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 28px 28px,
-    linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 28px 28px,
-    var(--bg-3);
-}
-
-.art-network {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.art-network__lines path {
-  fill: none;
-  stroke: var(--stone);
-  stroke-width: 0.6;
-  stroke-dasharray: 2 3;
-}
-
-.art-network__nodes circle {
-  fill: var(--ink);
-}
-
-.art-network__target {
-  fill: none !important;
-  stroke: var(--acid);
-  stroke-width: 1;
-  transform-origin: 180px 30px;
-  animation: pulse 2.8s var(--ease) infinite;
-}
-
 /* =========================================================
    AWAKENED CREATORS — the portal
    ========================================================= */
@@ -2145,72 +2115,6 @@ main:focus {
   }
 }
 
-/* learning path */
-
-.path {
-  display: grid;
-  border-top: 1px solid var(--line);
-}
-
-.path__step {
-  position: relative;
-  display: grid;
-  gap: 8px;
-  padding: 28px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.path__name {
-  font-size: clamp(2.4rem, 10vw, 5rem);
-  font-weight: 800;
-  font-stretch: 70%;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-}
-
-.path__step:last-child .path__name {
-  color: transparent;
-  -webkit-text-stroke: 1px var(--ink-2);
-}
-
-.path__arrow {
-  position: absolute;
-  right: 0;
-  bottom: 28px;
-  font-size: 1.5rem;
-  color: var(--stone);
-  rotate: 90deg;
-}
-
-@media (min-width: 960px) {
-  .path {
-    grid-template-columns: repeat(4, 1fr);
-    border-bottom: 1px solid var(--line);
-  }
-
-  .path__step {
-    padding: 32px 32px 40px 0;
-    border-bottom: 0;
-  }
-
-  .path__step + .path__step {
-    padding-left: 24px;
-    border-left: 1px solid var(--line);
-  }
-
-  .path__name {
-    font-size: clamp(2.2rem, 4.2vw, 4.5rem);
-  }
-
-  .path__arrow {
-    top: 50%;
-    bottom: auto;
-    right: 12px;
-    rotate: 0deg;
-  }
-}
-
 /* about */
 
 .about-roles {
@@ -2400,11 +2304,6 @@ main:focus {
 
 @keyframes spin {
   to { transform: rotate(360deg); }
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.8); opacity: 0.4; }
 }
 
 @keyframes breathe {
