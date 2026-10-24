@@ -5,6 +5,13 @@ import type { Art } from "@/data/site";
 export default function BuildArt({ art }: { art: Art }) {
   return (
     <div className={`art art--${art}`} aria-hidden="true">
+      {art === "clock" && (
+        <>
+          <div className="art-clock__dial" />
+          <div className="art-clock__hand" />
+          <p className="art-clock__time">48:00:00</p>
+        </>
+      )}
       {art === "portal" && (
         <>
           <div className="art-portal__arch" />
