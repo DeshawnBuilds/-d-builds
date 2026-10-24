@@ -1,12 +1,11 @@
 import Link from "next/link";
 import { useId } from "react";
+import SignupForm from "./SignupForm";
 import { socialLinks, worlds } from "@/data/site";
 
 type Props = { headingLevel?: "h1" | "h2" };
 
-// No email list is connected yet, so this section points to the worlds
-// instead of showing a form that stores nothing. Add the form back once a
-// newsletter service is wired up.
+// Points to the worlds, then offers the free guide signup.
 export default function Newsletter({ headingLevel = "h2" }: Props) {
   const id = useId();
   const Heading = headingLevel;
@@ -62,7 +61,14 @@ export default function Newsletter({ headingLevel = "h2" }: Props) {
               </li>
             ))}
           </ul>
-          <p className="meta newsletter__small">Email updates are coming. No noise. Just the build.</p>
+          <div className="newsletter__signup">
+            <p className="newsletter__signup-copy">
+              <span className="ink">Start building your own.</span> Get{" "}
+              <Link href="/free-guide">Awaken the Creator</Link>, my free guide to making your
+              first creative piece with AI.
+            </p>
+            <SignupForm />
+          </div>
         </div>
       </div>
     </section>

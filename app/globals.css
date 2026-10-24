@@ -1495,12 +1495,12 @@ main:focus {
   color: var(--ink-2);
 }
 
-.newsletter__form {
+.signup__form {
   display: grid;
   gap: 12px;
 }
 
-.newsletter__input {
+.signup__input {
   width: 100%;
   min-height: 56px;
   padding: 0 18px;
@@ -1511,25 +1511,25 @@ main:focus {
   transition: border-color 0.25s var(--ease);
 }
 
-.newsletter__input::placeholder {
+.signup__input::placeholder {
   color: var(--stone-2);
 }
 
-.newsletter__input:hover {
+.signup__input:hover {
   border-color: var(--stone);
 }
 
-.newsletter__input:focus-visible {
+.signup__input:focus-visible {
   outline: none;
   border-color: var(--acid);
   box-shadow: 0 0 0 1px var(--acid);
 }
 
-.newsletter__form .btn {
+.signup__form .btn {
   min-height: 56px;
 }
 
-.newsletter__done {
+.signup__done {
   display: grid;
   gap: 12px;
   justify-items: start;
@@ -1539,8 +1539,50 @@ main:focus {
   color: var(--ink);
 }
 
-.newsletter__small {
+.newsletter__small,
+.signup__small {
   color: var(--stone-2);
+}
+
+.signup__input[aria-invalid="true"] {
+  border-color: #e0806b;
+}
+
+.signup__form .btn:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+.signup__error {
+  margin: 0;
+  color: #f0a08f;
+  font-size: 0.9375rem;
+}
+
+.signup__error:empty {
+  display: none;
+}
+
+.newsletter__signup {
+  display: grid;
+  gap: 16px;
+  margin-top: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.newsletter__signup-copy {
+  max-width: 30em;
+  color: var(--stone);
+}
+
+.newsletter__signup-copy a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--line-2);
+}
+
+.newsletter__signup-copy a:hover {
+  color: var(--acid);
 }
 
 .follow-page .newsletter {
@@ -1549,13 +1591,17 @@ main:focus {
 }
 
 @media (min-width: 640px) {
-  .newsletter__form {
+  .signup__form {
     grid-template-columns: 1fr auto;
-    gap: 0;
+    column-gap: 0;
   }
 
-  .newsletter__form .btn {
+  .signup__form .btn {
     border-left: 0;
+  }
+
+  .signup__error {
+    grid-column: 1 / -1;
   }
 }
 
@@ -2459,6 +2505,14 @@ main:focus {
   color: var(--acid);
 }
 
+.world__cta--accent {
+  color: var(--acid);
+}
+
+.world__cta--accent:hover {
+  color: var(--ink);
+}
+
 @media (min-width: 960px) {
   .worlds__list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2718,5 +2772,110 @@ main:focus {
 
   .film:first-child {
     grid-column: 1 / -1;
+  }
+}
+
+/* =========================================================
+   FREE GUIDE — Awaken the Creator
+   ========================================================= */
+
+.guide-hero__grid {
+  display: grid;
+  gap: 40px;
+}
+
+.guide-hero__intro {
+  display: grid;
+  gap: 28px;
+  justify-items: start;
+}
+
+.guide-hero__title {
+  font-size: clamp(3rem, 13.5vw, 10rem);
+}
+
+.guide-hero__subhead {
+  max-width: 24em;
+}
+
+.guide-hero__offer {
+  display: grid;
+  gap: 28px;
+  align-content: end;
+  animation: fade 1.2s var(--ease) 0.6s both;
+}
+
+.guide-hero__body {
+  max-width: 34em;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+
+.guide-hero__form {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  border: 1px solid var(--line-2);
+  background: linear-gradient(135deg, var(--bg-2), var(--bg));
+}
+
+.guide-outcomes__label {
+  margin-bottom: 32px;
+}
+
+.guide-outcomes {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.guide-outcome {
+  display: grid;
+  gap: 10px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-outcome__num {
+  color: var(--acid);
+}
+
+.guide-outcome__title {
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-weight: 800;
+  font-stretch: 72%;
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+}
+
+.guide-outcome__note {
+  color: var(--stone);
+}
+
+@media (min-width: 960px) {
+  .guide-hero__grid {
+    grid-template-columns: 1.15fr 1fr;
+    align-items: end;
+    gap: 64px;
+  }
+
+  .guide-hero__title {
+    font-size: clamp(4.5rem, 8.6vw, 9rem);
+  }
+
+  .guide-outcomes {
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .guide-outcome {
+    padding: 40px 32px 48px 0;
+    border-bottom: 0;
+  }
+
+  .guide-outcome + .guide-outcome {
+    padding-left: 32px;
+    border-left: 1px solid var(--line);
   }
 }

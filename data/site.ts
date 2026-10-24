@@ -485,6 +485,8 @@ export type World = {
   // Outside channel. Leave url empty until a real one exists.
   url?: string;
   urlLabel: string;
+  // Extra links on this site, shown after the cta.
+  links?: NavItem[];
 };
 
 export const worlds: World[] = [
@@ -516,6 +518,7 @@ export const worlds: World[] = [
     cta: "Enter the universe",
     url: "https://www.youtube.com/@ACU-STS",
     urlLabel: "Watch on YouTube",
+    links: [{ label: "Make your own → Free guide", href: "/free-guide" }],
   },
   {
     key: "wcw",

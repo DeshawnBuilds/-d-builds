@@ -70,6 +70,11 @@ export default function Worlds({ headingLevel = "h2", compact = false }: Props) 
                       {w.cta} <span aria-hidden="true">→</span>
                     </Link>
                   )}
+                  {w.links?.map((l) => (
+                    <Link key={l.href} href={l.href} className="world__cta world__cta--accent meta">
+                      {l.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
             </li>
