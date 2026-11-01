@@ -29,7 +29,13 @@ export default function SignupForm({ buttonLabel = "Get the free guide" }: Props
   if (status === "success") {
     return (
       <div className="signup__done" role="status">
-        <p>Check your inbox. Confirm your email and your guide is on the way.</p>
+        <p>
+          Check your inbox &mdash; and your spam or Promotions folder. Confirm your email and
+          your guide is on the way.
+        </p>
+        <p className="meta signup__small">
+          Found it in spam? Mark it &lsquo;Not spam&rsquo; so future emails reach you.
+        </p>
       </div>
     );
   }
